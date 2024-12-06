@@ -1,0 +1,36 @@
+unit DifficultySUB;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.Imaging.pngimage, Vcl.StdCtrls,
+  Vcl.Imaging.jpeg, Vcl.ExtCtrls;
+
+type
+  TfrmSub = class(TForm)
+    imgBackground: TImage;
+    btnSingle: TButton;
+    Button1: TButton;
+    Button2: TButton;
+    Image1: TImage;
+    btnHome: TButton;
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+
+    bEasy : Boolean;
+    bMedium : Boolean;
+    bHard : Boolean;
+
+  end;
+
+var
+  frmSub: TfrmSub;
+
+implementation
+
+{$R *.dfm}
+
+end.

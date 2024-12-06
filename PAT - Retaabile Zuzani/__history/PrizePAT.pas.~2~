@@ -1,0 +1,31 @@
+unit PrizePAT;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, Vcl.ExtCtrls,
+  Vcl.Imaging.jpeg, AvatarPAT, AvatarPATT, WelcomePAT, PlayMED1, PlayPAT, PlayHARD;
+
+type
+  TfrmPrize = class(TForm)
+    frmBackground: TImage;
+    Timer1: TTimer;
+    imgPrize1: TImage;
+    imgPrize2: TImage;
+    lblPlayer1: TLabel;
+    lblPlayer2: TLabel;
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  frmPrize: TfrmPrize;
+
+implementation
+
+{$R *.dfm}
+
+end.

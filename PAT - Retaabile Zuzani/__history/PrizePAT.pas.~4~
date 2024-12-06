@@ -1,0 +1,58 @@
+unit PrizePAT;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, Vcl.ExtCtrls,
+  Vcl.Imaging.jpeg, AvatarPAT, AvatarPATT, WelcomePAT, PlayMED1, PlayPAT, PlayHARD;
+
+type
+  TfrmPrize = class(TForm)
+    frmBackground: TImage;
+    Timer1: TTimer;
+    imgPrize1: TImage;
+    imgPrize2: TImage;
+    lblPlayer1: TLabel;
+    lblPlayer2: TLabel;
+    procedure Timer1Timer(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  frmPrize: TfrmPrize;
+
+implementation
+
+{$R *.dfm}
+
+procedure TfrmPrize.Timer1Timer(Sender: TObject);
+begin
+  if (frmEasy.btnPlayer1.Enabled) = False then
+  begin
+    if StrToInt(frmEasy.lblPoints1.Caption) >= 5 then
+    begin
+      imgPrize1.Picture.LoadFromFile('bronze.png');
+      lblPlayer1.Caption := (frmEasy.lblPlayer1.Caption);
+    end;
+
+   if StrToInt(frmEasy.lblPoints1.Caption) >= 10 then
+    begin
+      imgPrize1.Picture.LoadFromFile('silver.png');
+      lblPlayer1.Caption := (frmEasy.lblPlayer1.Caption);
+    end;
+
+    if StrToInt(frmEasy.lblPoints1.Caption) >= 12 then
+    begin
+      imgPrize1.Picture.LoadFromFile('gold.png');
+      lblPlayer1.Caption := (frmEasy.lblPlayer1.Caption);
+    end;
+
+  end;
+
+end;
+
+end.

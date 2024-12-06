@@ -1,0 +1,67 @@
+unit PlayMED;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.Imaging.pngimage, Vcl.StdCtrls,
+  Vcl.Imaging.jpeg, Vcl.ExtCtrls;
+
+type
+  TfrmMed = class(TForm)
+    Image1: TImage;
+    imgPlayer1: TImage;
+    lblPlayer1: TLabel;
+    lblPoints1: TLabel;
+    imgPlayer2: TImage;
+    lblPlayer2: TLabel;
+    lblPoints2: TLabel;
+    imgRoad: TImage;
+    btnPlayer1: TButton;
+    btnPlayer2: TButton;
+    btnEnd: TButton;
+    btnStart: TButton;
+    btnStart1: TButton;
+    imgWool1: TImage;
+    imgWool2: TImage;
+    imgBanner: TImage;
+    tmrBanner: TTimer;
+    tmrPlayer1: TTimer;
+    tmrPlayer2: TTimer;
+    tmrSec: TTimer;
+    procedure tmrBannerTimer(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  frmMed: TfrmMed;
+
+implementation
+
+{$R *.dfm}
+
+procedure TfrmMed.tmrBannerTimer(Sender: TObject);
+begin
+imgBanner.Left := imgBanner.Left + iHorizontalDirection;
+
+  if imgBanner.Left >= 200 then
+  begin
+    iHorizontalDirection := iHorizontalDirection * -1;
+  end;
+
+  if imgBanner.Left <= 140 then
+  begin
+    iHorizontalDirection := iHorizontalDirection * -1;
+  end;
+
+  if imgBanner.Left <= 0 then
+  begin
+    iHorizontalDirection := iHorizontalDirection + 1;
+  end;
+
+end;
+
+end.

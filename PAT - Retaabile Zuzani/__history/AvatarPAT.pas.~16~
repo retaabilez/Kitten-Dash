@@ -1,0 +1,66 @@
+unit AvatarPAT;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.Imaging.jpeg, Vcl.ExtCtrls,
+  Vcl.StdCtrls, WelcomePAT, AvatarPATT;
+
+type
+  TfrmAvatar = class(TForm)
+    imgBackground: TImage;
+    pnlNames: TPanel;
+    rgpNames: TRadioGroup;
+    imgCat: TImage;
+    btnBack: TButton;
+    btnNext: TButton;
+    edtName: TEdit;
+    procedure btnBackClick(Sender: TObject);
+    procedure rgpNamesClick(Sender: TObject);
+    procedure btnNextClick(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  frmAvatar: TfrmAvatar;
+
+implementation
+
+{$R *.dfm}
+
+procedure TfrmAvatar.btnBackClick(Sender: TObject);
+begin
+frmAvatar.Hide;
+frmWelcome.Show;
+end;
+
+procedure TfrmAvatar.btnNextClick(Sender: TObject);
+begin
+ frmAvatar.Hide;
+ frmAvatar2.Show;
+end;
+
+procedure TfrmAvatar.rgpNamesClick(Sender: TObject);
+var iNames : Integer;
+begin
+
+edtName.Text := 'Player Name';
+iNames := rgpNames.ItemIndex;
+
+case iNames of
+ 0 : imgCat.Picture.LoadFromFile('freckles.jpeg');
+ 1 : imgCat.Picture.LoadFromFile('fudge.jpeg');
+ 2 : imgCat.Picture.LoadFromFile('snow.jpeg');
+ 3 : imgCat.Picture.LoadFromFile('soot.jpeg');
+ 4 : imgCat.Picture.LoadFromFile('cally.jpg');
+
+
+
+end;
+end;
+
+end.
